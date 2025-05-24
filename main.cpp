@@ -70,6 +70,11 @@ int adjYaw=yaw;
   pitch=0;
   roll=0;
   }
+if(distances[1]<30){
+pitch=100;
+roll=0;
+yaw=0;
+}
     if(distances[2]<30){
   adjYaw=-100;
   pitch=0;
