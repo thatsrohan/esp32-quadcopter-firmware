@@ -1,4 +1,4 @@
-#include <Arduino.h>
+ #include <Arduino.h>
 uint8_t motor_pins[4]={14,15,16,17};
 //Ultrasonic Pins
 int trigPins[4]={5,19,22,25};
@@ -84,10 +84,10 @@ int adjYaw=yaw;
   yaw=adjYaw;
   throttle=adjThrottle;
   int motorspeeds[4];
-  motorspeeds[0]=constrain(throttle+yaw+pitch+roll,3000,7000);
-  motorspeeds[1]=constrain(throttle-yaw+pitch-roll,3000,7000);
-  motorspeeds[2]=constrain(throttle-yaw-pitch+roll,3000,7000);
-  motorspeeds[3]=constrain(throttle+yaw-pitch-roll,3000,7000);
+  motorspeeds[0]=constrain(throttle+yaw-pitch+roll,3000,7000);
+  motorspeeds[1]=constrain(throttle-yaw-pitch-roll,3000,7000);
+  motorspeeds[2]=constrain(throttle-yaw+pitch+roll,3000,7000);
+  motorspeeds[3]=constrain(throttle+yaw+pitch-roll,3000,7000);
   for(int i=0;i<4;i++){
     ledcWrite(i,motorspeeds[i]);
   }
